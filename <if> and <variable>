@@ -1,0 +1,6 @@
+#!/bin/bash - пишу какой интерпретатор использовать
+RESULT=$(ls /etc) - так обьявляется переменная (знак $ обязателен!)
+if [[ $RESULT = *"apt"* & $? = 0 ]]; - условие if
+then echo "SUCCESS"
+else echo "FAIL"
+fi
