@@ -1,14 +1,8 @@
 #!/bin/bash - пишу какой интерпретатор использовать
 RESULT = $(ls /etc) - так обьявляется переменная (знак $ обязателен!)
 if [[ $RESULT == *"apt"* && $? == 0]]; условие if. * - произвольное количиство символов; $? - код ошибки (0 значит что ошибки нет)
-then echo "good" - вывод на экран SUCCESS
+then echo "SUCCESS" - вывод на экран SUCCESS
 else echo "FAIL" вывод на экран FAIL
 fi
 
 
-#!/bin/bash 
-RESULT=$(ls /etc) - так обьявляется переменная (знак $ обязателен!)
-if [[ $RESULT = *"apt"* & $? = 0 ]]; - условие if
-then echo "SUCCESS" - вывод на экран SUCCESS
-else echo "FAIL" - вывод на экран FAIL
-fi - окночание if
