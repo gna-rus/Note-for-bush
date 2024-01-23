@@ -1,0 +1,31 @@
+# Для работы чере питон с командной строкой следует использовать библиотеку subprocess (аналог os.system но лучше)
+
+
+subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None, 
+capture_output=False, shell=False, cwd=None, timeout=None, check=False, 
+encoding=None, errors=None, text=None, env=None, universal_newlines=None, **other_popen_kwargs)
+
+
+Функция run() модуля subprocess запускает команду/скрипт/программу с
+аргументами, ждёт завершения команды, а затем возвращает экземпляр
+CompletedProcess() с результатами работы.
+Разберём параметры функции. Аргументы функции, за исключением args, не
+обязательны и, следовательно, задаются только ключевыми словами.
+● args — запускаемая программа с аргументами,
+● stdin=None — поток данных, отправляемых в процесс,
+● input=None — поток данных, отправляемых в процесс,
+● stdout=None — поток вывода программы,
+● stderr=None — поток ошибок программы,
+● capture_output=False — захват вывода stdout и stderr,
+● shell=False — используйте True, если программа и её аргументы
+представлены как одна строка,
+● cwd=None — путь к рабочему каталогу запускаемой программы,
+● timeout=None — максимально допустимое время выполнения запущенной
+программы,
+● check=False — вызывает исключение при завершении запущенной
+программы с ошибками,
+● encoding=None — кодировка, если input — строка,
+● errors=None — обработчик ошибок кодировки,
+● text=None — текстовый режим для stdin, stdout и stderr,
+● env=None — переменные среды для нового процесса,
+● universal_newlines=None — то же, что и параметр text.
