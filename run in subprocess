@@ -1,4 +1,6 @@
 import subprocess
+
+
 # if __name__ == "__main__":
 #     res = subprocess.run(args="cat /etc/os-release", shell=True, stdout=subprocess.PIPE, encoding="utf-8")
 #     out = res.stdout
@@ -8,12 +10,20 @@ import subprocess
 #         print("FAIL")
 
 
-if __name__ == "__main__":
-    res = subprocess.run(args="cat /etc/os-release", shell=True, stdout=subprocess.PIPE, encoding="utf-8")
-    out = res.stdout
-    print(out)
-    lst = out.split("\n")
-    if "22.04.3" in out and "jammy" in out and 0 == res.returncode:
-        print("SUCCESS")
-    else:
-        print("FAIL")
+# if __name__ == "__main__":
+#     res = subprocess.run(args="cat /etc/os-release", shell=True, stdout=subprocess.PIPE, encoding="utf-8")
+#     out = res.stdout
+#     print(out)
+#     lst = out.split("\n")
+#     if "22.04.3" in out and "jammy" in out and 0 == res.returncode:
+#         print("SUCCESS")
+#     else:
+#         print("FAIL")
+
+result = subprocess.run(['ping','-3',5, '-n', 'host.host1'], encoding="utf-8", stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+    # ['ping','-3',5, '-n', 'ya.ru/'] - это то что вводится в командную строку, но записывается так чтоб каждый обьект в строке выделен в отельный элемент списка
+    # stdout = subprocess.DEVNULL - это то куда будет уходить полученный результат
+    # DEVNULL - это специальный файл в который складывается мусор (что то вроде мусорная корзина)
+    # PIPE - стандартный поток
+    # stderr = subprocess.STDOUT - выводит поток ошибок в стандартный поток
+print(result.stdout)
